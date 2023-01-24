@@ -1,5 +1,7 @@
 import re
 
+#Cabro el que lo lea
+
 file = open("/Users/acer/Pictures/PYTHON/datux/ScannerALEMA/TESTEOS/codigo1.txt")
 
 operators = {'=' : 'Assignment op','+' : 'Addition op','-' : 'Subtraction op','/' : 'Division op','*' : 'Multiplication op','<' : 'Lessthan op','>' : 'Greaterthan op' }
