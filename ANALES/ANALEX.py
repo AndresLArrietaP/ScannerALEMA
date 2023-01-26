@@ -1,8 +1,10 @@
 import re
 
-#Cabro el que lo lea
-
 file = open("/Users/acer/Pictures/PYTHON/datux/ScannerALEMA/TESTEOS/codigo1.txt")
+
+regex = re.compile(r'[a-z][a-zA-Z0-9_]+')
+opl = re.compile(r'(\^|\v|\~)')
+opa = re.compile(r'(\+|\-|\/|\@|\$|\-$-|\#)')
 
 oplogicos = {'^':'Lógico “Y”' , 'v':'Lógico “Y”' , '~':'Negaciòn'}
 oplogicos_key = oplogicos.keys()
@@ -13,16 +15,16 @@ oparitmeticos_key = oparitmeticos.keys()
 oprelacion = {'==':'Igual a' , '>':'Mayor que' , '<':'Menor que' , '>=':'Mayor igual que' ,'<=':'Menor igual que'}
 oprelacion_key = oprelacion.keys()
 
-tipodato = {'numb' : 'Entero', 'numbdec': 'Decimal' , 'letter' : 'caracter', 'words' : 'cadena','clever' : 'lógico' }
+tipodato = {'numb' : 'Entero', 'numbdec': 'Decimal' , 'letter' : 'Caracter', 'words' : 'Cadena','clever' : 'Lógico' }
 tipodato_key = tipodato.keys()
 
 simbpuntuacion = { '*' : 'Fin de instruccion', ',' : 'coma' }
 simbpuntuacion_key = simbpuntuacion.keys()
 
-preservadas = { 'mucuck' : 'Constante', 'ente' : 'Clase' ,'arqui' : 'Mètodo','ctr' : 'Constructor'}
+preservadas = { 'with' : 'De mètodo','of' : 'De clase','craft' : 'Objeto','for' : 'Bucle','work' : 'Repetitivo1','check' : 'Repetitivo1','yes' : 'Condicional1','noty' : 'Condicional2','writing' : 'Escritura','reading' : 'Lectura', 'mucuck' : 'Constante', 'ente' : 'Clase' ,'arqui' : 'Mètodo','ctr' : 'Constructor'}
 preservadas_key = preservadas.keys()
 
-identifier = { 'a' : 'id', 'b' : 'id', 'c' : 'id' , 'd' : 'id' }
+identifier = { }
 identifier_key = identifier.keys()
 
 dataFlag = False
@@ -39,15 +41,17 @@ for line in program:
     print("Tokens are " , tokens)
     print("Line#", count, "properties \n")
     for token in tokens:
-        if token in operators_key:
-            print("operator is ", operators[token])
-        if token in data_type_key:
-            print("datatype is", data_type[token])
-        if token in punctuation_symbol_key:
-            print (token, "Punctuation symbol is" , punctuation_symbol[token])
-        if token in identifier_key:
-            print (token, "Identifier is" , identifier[token])
+        if opl.match(token):
+            print("Op. lògico ")
+        elif opa.match(token):
+            print("Op. aritmètico ")
+        elif regex.match(token):
+            #identifier.update({"ID": token})
+            print ("Identificador " )
+        else:
+            print ("No encontrado " )
 
-           
+        
+    
     dataFlag=False
     print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _  _") 
