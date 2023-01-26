@@ -2,14 +2,23 @@ import re
 
 file = open("/Users/acer/Pictures/PYTHON/datux/ScannerALEMA/TESTEOS/codigo1.txt")
 
-operators = {'=' : 'Assignment op','+' : 'Addition op','-' : 'Subtraction op','/' : 'Division op','*' : 'Multiplication op','<' : 'Lessthan op','>' : 'Greaterthan op' }
-operators_key = operators.keys()
+oplogicos = {'^':'Lógico “Y”' , 'v':'Lógico “Y”' , '~':'Negaciòn'}
+oplogicos_key = oplogicos.keys()
 
-data_type = {'int' : 'integer type', 'float': 'Floating point' , 'char' : 'Character type', 'long' : 'long int' }
-data_type_key = data_type.keys()
+oparitmeticos = {'+':'Suma' , '-':'Resta' , '/':'Division' , '@':'Multiplicacion' ,'$':'Potencia' ,'-$-':'Raiz' ,'#':'Residuo'}
+oparitmeticos_key = oparitmeticos.keys()
 
-punctuation_symbol = { ':' : 'colon', ';' : 'semi-colon', '.' : 'dot' , ',' : 'comma' }
-punctuation_symbol_key = punctuation_symbol.keys()
+oprelacion = {'==':'Igual a' , '>':'Mayor que' , '<':'Menor que' , '>=':'Mayor igual que' ,'<=':'Menor igual que'}
+oprelacion_key = oprelacion.keys()
+
+tipodato = {'numb' : 'Entero', 'numbdec': 'Decimal' , 'letter' : 'caracter', 'words' : 'cadena','clever' : 'lógico' }
+tipodato_key = tipodato.keys()
+
+simbpuntuacion = { '*' : 'Fin de instruccion', ',' : 'coma' }
+simbpuntuacion_key = simbpuntuacion.keys()
+
+preservadas = { 'mucuck' : 'Constante', 'ente' : 'Clase' ,'arqui' : 'Mètodo','ctr' : 'Constructor'}
+preservadas_key = preservadas.keys()
 
 identifier = { 'a' : 'id', 'b' : 'id', 'c' : 'id' , 'd' : 'id' }
 identifier_key = identifier.keys()
