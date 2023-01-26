@@ -1,5 +1,7 @@
 import re
 
+#Cabro el que lo lea
+
 file = open("/Users/acer/Pictures/PYTHON/datux/ScannerALEMA/TESTEOS/codigo1.txt")
 
 oplogicos = {'^':'Lógico “Y”' , 'v':'Lógico “Y”' , '~':'Negaciòn'}
